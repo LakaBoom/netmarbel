@@ -1,0 +1,25 @@
+@import "../../static/variables.scss";
+.appbar {
+  width: calc(100% - 240px);
+  height: $appbarHeight;
+  margin-left: 240px;
+  top: 0;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  .burgerIcon {
+    display: none;
+  }
+  @media only screen and (max-width: 768px) {
+    .burgerIcon {
+      display: block;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .appbar {
+    width: 100%;
+    margin-left: unset;
+  }
+}

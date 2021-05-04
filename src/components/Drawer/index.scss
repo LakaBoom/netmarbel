@@ -1,0 +1,84 @@
+@import "../../static/variables.scss";
+.drawer {
+  position: relative;
+  width: $drawerWidth;
+  box-sizing: border-box;
+  left: 0;
+  top: -$appbarHeight;
+  padding-top: $appbarHeight;
+  transition: left 0.5s;
+  -webkit-transition: left 0.5s;
+  -moz-transition: left 0.5s;
+  -ms-transition: left 0.5s;
+  -o-transition: left 0.5s;
+  background: white;
+  .drawerBox {
+    position: relative;
+    height: calc(100% - 60px);
+    .logo {
+      position: absolute;
+      top: -$appbarHeight + 20px;
+      display: flex;
+      font-size: large;
+      align-items: center;
+      left: 50%;
+      transform: translate(-60%, 0);
+      -webkit-transform: translate(-60%, 0);
+      -moz-transform: translate(-60%, 0);
+      -ms-transform: translate(-60%, 0);
+      -o-transform: translate(-60%, 0);
+      .text {
+        margin-left: 10px;
+      }
+    }
+    .close {
+      display: none;
+    }
+  }
+
+  .menuList {
+    .menuItem {
+      margin-bottom: 5px;
+      &.selected {
+        background-color: $primary;
+      }
+      .menuLink {
+        display: flex;
+        padding: 20px 5px;
+        .text {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+
+  .drawerFooter {
+    height: 60px;
+    text-align: center;
+    border-top: 1px solid lightgray;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: lightgray;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .drawer {
+    position: absolute;
+    left: -$drawerWidth - 10px;
+    padding-top: $appbarHeight;
+    top: 0;
+    &.show {
+      left: 0;
+      .close {
+        display: block;
+        position: absolute;
+        top: -$appbarHeight + 5px;
+        right: 10px;
+        cursor: pointer;
+      }
+    }
+  }
+}

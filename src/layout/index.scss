@@ -1,0 +1,9 @@
+@import "../static/variables.scss";
+.container {
+  display: flex;
+  padding-top: $appbarHeight;
+  main {
+    flex: 1;
+    margin: 10px;
+  }
+}
